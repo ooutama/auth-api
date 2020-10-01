@@ -5,6 +5,7 @@ namespace OutamaOthmane\AuthApi\Http\Controllers;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Lang;
+use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
 use OutamaOthmane\AuthApi\Exceptions\UserModelDoesntInheritHasApiTokensException;
 use OutamaOthmane\AuthApi\Facades\AuthApi;
@@ -48,7 +49,15 @@ class LoginController extends Controller
 			);
 		}
 
-		return $user->createToken(self::DEVICE_NAME)->plainTextToken;
+		$token = $user->createToken(self::DEVICE_NAME)->plainTextToken;
+
+		// Check if the id is provided within the token
+		if (Str::contains($token, "|")) {
+			// Skip the id
+			return Str::afterLast($token, "|");
+		}
+
+		return $token;
 	}
 
 	protected function failedResponse()
