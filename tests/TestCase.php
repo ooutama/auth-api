@@ -35,7 +35,7 @@ abstract class TestCase extends BaseTestCase
 		// You can use sqlite drive or testing driver provided by orchestra
 		// $app['config']->set('database.default', 'testing');
 		
-		// Because sqlite didnt work well for me on my windows PC, I use mysql instead.
+		// Because sqlite does not work well on my windows, I use mysql instead.
 		$app['config']->set('database.default', 'testing');
         $app['config']->set('database.connections.testing', [
             'driver' 	=> 'mysql',

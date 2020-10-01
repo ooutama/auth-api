@@ -37,6 +37,5 @@ class LoginTest extends TestCase
 			'password'	=> 'password'
 		])
 		->assertJsonStructure(['token']);
-
 	}
 }

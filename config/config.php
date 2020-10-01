@@ -60,4 +60,16 @@ return [
     | 
     */
     'exclude_routes'    => [],
+
+    /*
+    |--------------------------------------------------------------------------
+    | User resource
+    |--------------------------------------------------------------------------
+    |
+    | The name of the resource that the me route will use to show user information.
+    | Use the command make:resource to create your own resource. 
+    | For more details check: https://laravel.com/docs/eloquent-resources#introduction
+    | 
+    */
+    'user_resource'     => null,
 ];

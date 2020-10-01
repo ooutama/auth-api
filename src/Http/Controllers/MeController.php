@@ -17,8 +17,7 @@ class MeController extends Controller
 
 	public function __invoke(Request $request)
 	{
-		$privateUserResource = AuthApi::getPrivateUserResource();
-		
+		$privateUserResource = AuthApi::getUserResource();
 		return (new $privateUserResource($request->user()));
 	}
 }

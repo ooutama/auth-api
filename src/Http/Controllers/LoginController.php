@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
-use OutamaOthmane\AuthApi\Exceptions\UserModelDoesntInheritHasApiTokensException;
+use OutamaOthmane\AuthApi\Exceptions\UserModelDoesntUseHasApiTokensException;
 use OutamaOthmane\AuthApi\Facades\AuthApi;
 use OutamaOthmane\AuthApi\Http\Requests\LoginRequest;
 
@@ -44,18 +44,20 @@ class LoginController extends Controller
 		// Check if the model user has createToken method.
 		// In other words, the user model has to use HasApiTokens trait provided by laravel/sanctum.
 		if ( ! method_exists($user, "createToken")) {
-			throw new UserModelDoesntInheritHasApiTokensException(
-				sprintf("'%s'  does not inherit the 'Laravel\Sanctum\HasApiTokens' trait.", AuthApi::userModelClass())
+			throw new UserModelDoesntUseHasApiTokensException(
+				sprintf("'%s'  does not use the 'Laravel\Sanctum\HasApiTokens' trait.", AuthApi::userModelClass())
 			);
 		}
 
 		$token = $user->createToken(self::DEVICE_NAME)->plainTextToken;
 
+		/*-------------------------------------------------------------
 		// Check if the id is provided within the token
 		if (Str::contains($token, "|")) {
 			// Skip the id
 			return Str::afterLast($token, "|");
 		}
+		-------------------------------------------------------------*/
 
 		return $token;
 	}

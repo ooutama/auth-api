@@ -4,7 +4,7 @@ namespace OutamaOthmane\AuthApi\Exceptions;
 
 use Exception;
 
-class PrivateUserResourceNotFound extends Exception
+class UserResourceNotFound extends Exception
 {
 
 }

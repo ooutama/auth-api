@@ -4,7 +4,7 @@ namespace OutamaOthmane\AuthApi\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class PrivateUserResource extends JsonResource
+class UserResource extends JsonResource
 {
 	public function toArray($request)
     {
