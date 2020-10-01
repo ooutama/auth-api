@@ -8,7 +8,7 @@ First, you need to install **laravel/sanctum** package. Check out the official d
 
 You can install the package via composer:
 ```bash
-composer require laravel/sanctum outama-othmane/auth-api
+composer require outama-othmane/auth-api:dev-main
 ```
 
 The package will automatically register itself.
