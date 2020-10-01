@@ -33,26 +33,26 @@ abstract class TestCase extends BaseTestCase
 	protected function getEnvironmentSetUp($app)
 	{
 		// You can use sqlite drive or testing driver provided by orchestra
-		// $app['config']->set('database.default', 'testing');
-		
-		// Because sqlite does not work well on my windows, I use mysql instead.
 		$app['config']->set('database.default', 'testing');
-        $app['config']->set('database.connections.testing', [
-            'driver' 	=> 'mysql',
-            'url' 		=> null,
-            'host'		=> 'localhost',
-            'database'	=> 'mm',
-			'username'	=> 'root',
-			'password'	=> '',
-            'port' 		=> 3306,
-            'unix_socket' => '',
-            'charset' => 'utf8mb4',
-            'collation' => 'utf8mb4_unicode_ci',
-            'prefix' => '',
-            'prefix_indexes' => true,
-            'strict' => true,
-            'engine' => null,
-        ]);
+		
+		// If the sqlite does not work on your machine
+		// $app['config']->set('database.default', 'testing');
+  //       $app['config']->set('database.connections.testing', [
+  //           'driver' 	=> 'mysql',
+  //           'url' 		=> null,
+  //           'host'		=> 'localhost',
+  //           'database'	=> 'mm',
+		// 	'username'	=> 'root',
+		// 	'password'	=> '',
+  //           'port' 		=> 3306,
+  //           'unix_socket' => '',
+  //           'charset' => 'utf8mb4',
+  //           'collation' => 'utf8mb4_unicode_ci',
+  //           'prefix' => '',
+  //           'prefix_indexes' => true,
+  //           'strict' => true,
+  //           'engine' => null,
+  //       ]);
 
 		$app['config']->set('auth.defaults.guard', 'api');
 		$app['config']->set('auth.guards.api.driver', 'sanctum');

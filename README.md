@@ -18,14 +18,10 @@ You can publish the config file with:
 php artisan vendor:publish --provider="OutamaOthmane\AuthApi\AuthApiServiceProvider" --tag="auth-api-config"
 ```
 
-You can publish the service provider with:
-```bash
-php artisan vendor:publish --provider="OutamaOthmane\AuthApi\AuthApiServiceProvider" --tag="auth-api-provider"
-```
-
 ## Usage
-Change the _auth-api.php_ to suit your application.
+Change the **auth-api.php** to suit your application.
 Et voilà, the authentification is now possible on your application.
+Use the command _'php artisan routes'_ to see the added routes.
 
 ## Testing
 
