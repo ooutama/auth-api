@@ -1,0 +1,45 @@
+{
+    "name": "outama-othmane/auth-api",
+    "description": "A simple api authentification for Laravel framework.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Othmane Outama",
+            "email": "outama.othmane@gmail.com"
+        }
+    ],
+    "require": {
+        "illuminate/support": "^8.7"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.2",
+        "laravel/legacy-factories": "^1.0",
+        "laravel/sanctum": "^2.6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "OutamaOthmane\\AuthApi\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "OutamaOthmane\\AuthApi\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "OutamaOthmane\\AuthApi\\AuthApiServiceProvider"
+            ],
+            "aliases": {
+                "AuthApi": "OutamaOthmane\\AuthApi\\Facades\\AuthApi"
+            }
+        }
+    }
+}

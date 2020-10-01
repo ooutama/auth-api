@@ -1,0 +1,26 @@
+<?php
+
+namespace App\Providers;
+
+use Illuminate\Support\ServiceProvider;
+use OutamaOthmane\AuthApi\Facades\AuthApi;
+use OutamaOthmane\AuthApi\Http\Resources\PrivateUserResource;
+
+class AuthApiServiceProvider extends ServiceProvider
+{
+	public function boot()
+	{
+		AuthApi::setPrivateUserResource($this->registerPrivateUserResource());
+	}
+
+	public function register()
+	{
+		//
+	}
+
+	protected function registerPrivateUserResource()
+	{
+		// Change this to your own private user resource
+		return PrivateUserResource::class;
+	}
+}
