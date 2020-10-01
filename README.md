@@ -37,4 +37,4 @@ composer test
 - [Outama Othmane](https://github.com/outama-othmane)
 
 ## License
-The MIT License (MIT). Please see [License File](/blob/main/LICENSE.md) for more information.
+The MIT License (MIT). Please see [License File](/LICENSE.md) for more information.
