@@ -1,6 +1,6 @@
 # Auth API
 
->> A simple api authentification for Laravel framework.
+> A simple api authentification for Laravel framework.
 
 ## Installation
 
@@ -37,4 +37,4 @@ composer test
 - [Outama Othmane](https://github.com/outama-othmane)
 
 ## License
-The MIT License (MIT). Please see [License File](/blob/master/LICENSE.md) for more information.
+The MIT License (MIT). Please see [License File](/blob/main/LICENSE.md) for more information.
